@@ -485,7 +485,7 @@ call vundle#begin()
 " call vundle#begin()
 
 " let Vundle manage Vundle
-Plugin 'VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.Vim'
 
 " original repos on github
 Plugin 'scrooloose/syntastic'
