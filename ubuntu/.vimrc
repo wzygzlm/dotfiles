@@ -500,6 +500,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe'
 " 设置.ycm_extra_conf.py的默认路径
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+nmap <leader>yg :YcmCompleter GoTo<cr><cr>
+nmap <leader>yf :YcmCompleter FixIt<cr><cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VimGdb  settings                   """""""""""""""""""""""""""""""
