@@ -526,7 +526,7 @@ nmap <silent><leader>wm :WMToggle<cr>
 " => taglist settings               """""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plugin 'taglist.vim'
-let Tlist_Ctags_Cmd = 'd:\"Program Files"\ctags58\ctags.exe'
+let Tlist_Ctags_Cmd = 'ctags'
 let Tlist_Show_One_File = 1  "不同时显示多个文件的tag，只显示当前文件的
 let Tlist_Exit_OnlyWindow = 1 "如果taglist窗口是最后一个窗口,则退出vim
 let Tlist_Use_Right_Window = 1 "在右侧窗口显示taglist窗口
@@ -547,7 +547,7 @@ autocmd BufWinEnter \[Buf\ List\] setl nonumber
 " => tagbar settings               """"""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin 'Tagbar'
-let g:tagbar_ctags_bin = 'd:\Program Files\ctags58\ctags.exe'
+let g:tagbar_ctags_bin = 'ctags'
 let g:tagbar_width = 30
 let g:tagbar_autoclose = 1
 let g:tagbar_autofocus = 1
