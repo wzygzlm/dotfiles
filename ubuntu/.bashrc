@@ -141,10 +141,14 @@ fi
 tmux_init()
 {
     tmux start-server
-    tmux new-session -s "kumu" -d -n "local"    # create a new session
-    tmux new-window -n "other"          # create a new window
+    tmux new-session -s "minliu" -d -n "server"    # create a new session
+    tmux new-window -n "editor"          # create a new window
     tmux split-window -h                # create a hori split window
+    tmux select-pane -t 0
+    tmux new-window -n "shell"          # create a new window
     tmux split-window -v "top"          # create a split window and run top
+    tmux select-pane -t 0
+    tmux select-window -t 1
     tmux -2 attach-session -d           # tmux -2 force to use 256color，and attach existed tmux
 }
 
