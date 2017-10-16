@@ -504,6 +504,15 @@ nmap <leader>yg :YcmCompleter GoTo<cr><cr>
 nmap <leader>yf :YcmCompleter FixIt<cr><cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => powerline  settings                   """"""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plugin 'Lokaltog/vim-powerline'
+set laststatus=2
+set t_Co=256
+let g:Powerline_symbols= 'unicode'
+set encoding=utf8
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VimGdb  settings                   """""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -514,6 +523,7 @@ Plugin 'Colour-Sampler-Pack'
 Plugin 'SuperTab'
 Plugin 'verilog_systemverilog.vim'
 Plugin 'peaksea'      " color scheme
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => winManager settings               """"""""""""""""""""""""""""""""
