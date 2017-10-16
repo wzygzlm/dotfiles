@@ -1,2 +1,2 @@
-# MyOwnVimrc
-vim configuration file for myself.
+# Dotfiles
+My tmux configuration files and vim configuration files.
