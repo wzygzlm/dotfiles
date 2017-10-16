@@ -128,6 +128,16 @@ set -o vi
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+# Set powerline for bash
+function _update_ps1() {
+    PS1="$(powerline-shell $?)"
+}
+
+if [ "$TERM" != "linux" ]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
+
+# Create init tmux
 tmux_init()
 {
     tmux new-session -s "kumu" -d -n "local"    # create a new session
@@ -141,3 +151,4 @@ tmux_init()
 if which tmux 2>&1 >/dev/null; then
     test -z "$TMUX" && (tmux attach || tmux_init)
 fi
+
