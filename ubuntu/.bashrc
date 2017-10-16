@@ -140,6 +140,7 @@ fi
 # Create init tmux
 tmux_init()
 {
+    tmux start-server
     tmux new-session -s "kumu" -d -n "local"    # create a new session
     tmux new-window -n "other"          # create a new window
     tmux split-window -h                # create a hori split window
