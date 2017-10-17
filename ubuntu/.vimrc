@@ -523,6 +523,18 @@ let g:tmux_navigator_save_on_switch = 2
 let g:tmux_navigator_disable_when_zoomed = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-latex-live-preview  settings               """""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Used to preview the pdf in real-time while editing the tex files.
+Plugin 'xuhdev/vim-latex-live-preview'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-tex-fold  settings                         """""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" A light-weight alternative to vim-latexsuite's folding.
+Plugin 'matze/vim-tex-fold'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VimGdb  settings                   """""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
