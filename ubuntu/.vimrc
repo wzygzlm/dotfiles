@@ -425,6 +425,14 @@ function! SwitchToBuf(filename)
     endif
 endfunction
 
+" This function copies selection to system clipboard using xclip. 
+" It's very useful for vim which doesn't support clipboard feature.
+function! CopyVimSelToClip() range
+     echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), "\n")).'| xclip -i -sel clip') 
+endfunction
+" Pack it as a command.
+com! -range=% -nargs=0 CopyVimSelToClip :<line1>,<line2>call CopyVimSelToClip()
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => netrw settings                      """"""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -527,6 +535,7 @@ let g:tmux_navigator_disable_when_zoomed = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Used to preview the pdf in real-time while editing the tex files.
 Plugin 'xuhdev/vim-latex-live-preview'
+" let g:livepreview_previewer = 'apvlv'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-tex-fold  settings                         """""""""""""""""""
