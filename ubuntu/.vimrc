@@ -427,8 +427,28 @@ endfunction
 
 " This function copies selection to system clipboard using xclip. 
 " It's very useful for vim which doesn't support clipboard feature.
+" We use two method to implement it. The first is using for-loop, the
+" second one is using getline directly. The second one is simpler,
+" however the first one is more flexible since we can change the range
+" of every line we want to copy very fast.
+"
+" Notice: There are also a very interesting expr to select the region
+" in which every line consists of the whole line except the last character
+" whose index is $.
+" The expr is "^.*.\{1}$".
+" Just put here for fun.
+"
+" function! CopyVimSelToClip() range
+"     let hits = []
+"     for i in range(a:firstline, a:lastline)
+"         let line = getline(i)[0:-1]
+"         call add(hits, line)
+"     endfor
+"      echo system('echo '.shellescape(join(hits, "\r")).'| xclip -i -sel clip') 
+" endfunction
+
 function! CopyVimSelToClip() range
-     echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), "\n")).'| xclip -i -sel clip') 
+     echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), "\r")).'| xclip -i -sel clip') 
 endfunction
 
 " Pack it as a command and map C-c for copying.
