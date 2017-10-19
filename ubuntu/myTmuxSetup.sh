@@ -10,7 +10,7 @@ tmux_init()
     tmux new-window -n "files" "ranger"          # create a file manager window
     tmux new-window -n "ncdu" "ncdu"          # create a ncdu window
     tmux new-window -n "mutt" "mutt"          # create a email window
-    tmux new-window -n "sup" "sup"          # create a email window
+    tmux new-window -n "sup" "sup-mail"          # create a email window
     tmux select-pane -t 0
     tmux select-window -t 1
     tmux -2 attach-session -d           # tmux -2 force to use 256color，and attach existed tmux
