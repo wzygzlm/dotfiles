@@ -430,8 +430,19 @@ endfunction
 function! CopyVimSelToClip() range
      echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), "\n")).'| xclip -i -sel clip') 
 endfunction
-" Pack it as a command.
+
+" Pack it as a command and map C-c for copying.
+" Note, originally vim map it to quit command.
 com! -range=% -nargs=0 CopyVimSelToClip :<line1>,<line2>call CopyVimSelToClip()
+vnoremap <C-c> :call CopyVimSelToClip()<cr>
+
+" Create a new command to copy from clipboard to vim text.
+" Ctrl-v is used to map this command.
+" From vim help text, we know that vim already consider the problem
+" that Ctrl-v is often used to by user to map it as the paste action,
+" so they use Ctrl-q to replace Ctrl-v.
+com! -nargs=0 CopyClipToVimSel :read !xclip -o -sel clip<cr>
+noremap <C-v> :CopyClipToVimSel<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => netrw settings                      """"""""""""""""""""""""""""""
