@@ -1,0 +1,6 @@
+How to generate the password gpg file:
+echo "YourPassword" | gpg2 --encrypt --recipient "Your Name" -o ~/.mail-ini-passwd.gpg
+
+Refer to:
+fkoehler's blog: Encrypt OfflineIMAP and msmtp password with GnuPG
+http://f-koehler.github.io/posts/2015-03-17-offlineimap-msmtp-gnupg.html

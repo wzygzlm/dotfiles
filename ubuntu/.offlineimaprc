@@ -1,0 +1,57 @@
+#此general选项指定我有两个账户，账户名称分别为iamdsy1、139，使用时根据自己需要随意修改即可
+[general]
+accounts = ini
+#多少个账户可以同时同步,和前面的账户数相同即可
+maxsyncaccounts = 1
+# parse the encyrpt password
+pythonfile = ~/.decryptPwd.py
+
+#此为ini账户的一般设置项
+[Account ini]
+localrepository = ini_local
+remoterepository = ini_remote
+
+#意思是offlineimap间隔5分钟与服务器同步一次信件
+autorefresh = 5
+quick = 10
+
+#此选项为本地邮件的根目录设置
+[Repository ini_local]
+#电子邮件有2种存储方式，1种是所有邮件全存储到1个大文件里面，另1种就是建立一个邮箱文件夹，然后
+#所有邮件都存储到此邮箱文件夹下面，每1封邮件独立1个文件。
+#此处选择的是第2种方式
+type = Maildir
+#此为根目录，意思是服务器上的inbox会存储到ini目录下，而且在inbox目录下还会存在3个目录，分别是
+#cur new tmp
+localfolders = /media/minliu/Work/mail/ini/
+folderfilter = lambda folder: folder in ['INBOX', 'Sent', 'Drafts', 'Junk', 'Trash', 'Deleted Messages'] 
+
+#此选项为服务器邮件的设置
+[Repository ini_remote]
+#选用协议为imap，不是pop3
+type = IMAP
+#选用ssl加密链接方式
+ssl = yes
+#ini的imap服务器地址
+remotehost = imap.ini.uzh.ch
+#ini的imap服务器端口号
+remoteport = 993
+#我的ini邮箱的用户名，需要换成自己ini邮箱的用户名
+remoteuser = minliu
+#解密我的ini邮箱密码
+remotepasseval = mailpasswd("ini")
+# 设置TLS验证
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+#本地删了邮件，是否真的删服务器上的邮件，yes表示真的删，这样才是我在本地处理了邮件，不用再登录服务器去处理了
+realdelete = no
+# Instead of closing the connection once a sync is complete, offlineimap will
+# send empty data to the server to hold the connection open. A value of 60
+# attempts to hold the connection for a minute between syncs (both quick and
+# autorefresh).This setting has no effect if autorefresh and holdconnectionopen
+# are not both set.
+keepalive = 60
+# OfflineIMAP normally closes IMAP server connections between refreshes if
+# the global option autorefresh is specified.  If you wish it to keep the
+# connection open, set this to true. This setting has no effect if autorefresh
+# is not set.
+holdconnectionopen = yes
