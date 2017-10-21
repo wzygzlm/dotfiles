@@ -119,6 +119,9 @@ set editor = 'vim'
  bind index } bottom-page
  bind index f change-folder
 
+ macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+ macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+
 # basic colors -------------------------------------------------------
 color normal        white           black
 color error         red             black
@@ -215,7 +218,6 @@ color quoted4       red             black
 # set index format
 set index_format= "%4C %Z %{%b %d} %-15.15L (%?l?%4l&%4c?) %s"  # Default format
 set index_format="%4C %?M?+& ?%2M %2e %Z %[%a, %b %d, %Y at %I:%M:%S%p %Z] %-20.20L (%?l?%4l&%4c?) %s" # My format
-
 
 # mutt sup­ports thread­ing (duh!) through
 set sort="threads"
