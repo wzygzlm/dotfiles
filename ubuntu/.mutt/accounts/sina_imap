@@ -1,0 +1,25 @@
+# 设置发信地址和用户名
+set from = "lm3181@sina.com"
+set realname = "lm3181"
+set use_from = yes
+
+# 设置sina帐户和密码
+set imap_user = "lm3181"
+
+# encrypted imap password
+source '~/.decryptPwd.sh sina|'
+
+# 设置远程服务器文件夹
+set folder = "imaps://imap.sina.com:993"
+set spoolfile = "+INBOX"
+set postponed = "+Drafts"
+set record = "+Sent"
+set trash = "+Trash"
+mailboxes = +INBOX
+mailboxes = +Drafts
+mailboxes = +Sent
+mailboxes = +Trash
+mailboxes = +Web Notice
+
+# 设置P来自动更新邮件
+macro index P "!echo Checking mails......; offlineimap -o -u quiet \n"

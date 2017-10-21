@@ -5,7 +5,7 @@
 
 # General {
 # Show which segment fails and its exit code.
-export TMUX_POWERLINE_DEBUG_MODE_ENABLED="false"
+export TMUX_POWERLINE_DEBUG_MODE_ENABLED="true"
 # Use patched font symbols.
 export TMUX_POWERLINE_PATCHED_FONT_IN_USE="true"
 # The theme to use.
@@ -52,7 +52,7 @@ export TMUX_POWERLINE_SEG_HOSTNAME_FORMAT="short"
 
 # mailcount.sh {
 # Mailbox type to use. Can be any of {apple_mail, gmail, maildir, mbox, mailcheck}
-export TMUX_POWERLINE_SEG_MAILCOUNT_MAILBOX_TYPE=""
+export TMUX_POWERLINE_SEG_MAILCOUNT_MAILBOX_TYPE="maildir"
 
 ## Gmail
 # Enter your Gmail username here WITH OUT @gmail.com.( OR @domain)
@@ -71,7 +71,7 @@ export TMUX_POWERLINE_SEG_MAILCOUNT_GMAIL_INTERVAL="5"
 
 ## Maildir
 # Path to the maildir to check.
-export TMUX_POWERLINE_SEG_MAILCOUNT_MAILDIR_INBOX="~/.mail/inbox/new"
+export TMUX_POWERLINE_SEG_MAILCOUNT_MAILDIR_INBOX="/media/minliu/Work/mail/ini/INBOX/new"
 
 ## mbox
 # Path to the mbox to check.
@@ -84,11 +84,11 @@ export TMUX_POWERLINE_SEG_MAILCOUNT_MAILCHECKRC="~/.mailcheckrc"
 
 # now_playing.sh {
 # Music player to use. Can be any of {audacious, banshee, cmus, itunes, lastfm, mocp, mpd, mpd_simple, pithos, rdio, rhythmbox, spotify, spotify_wine}.
-export TMUX_POWERLINE_SEG_NOW_PLAYING_MUSIC_PLAYER=""
+export TMUX_POWERLINE_SEG_NOW_PLAYING_MUSIC_PLAYER="cmus"
 # Maximum output length.
-export TMUX_POWERLINE_SEG_NOW_PLAYING_MAX_LEN="40"
+export TMUX_POWERLINE_SEG_NOW_PLAYING_MAX_LEN="10"
 # How to handle too long strings. Can be {trim, roll}.
-export TMUX_POWERLINE_SEG_NOW_PLAYING_TRIM_METHOD="trim"
+export TMUX_POWERLINE_SEG_NOW_PLAYING_TRIM_METHOD="roll"
 # Charcters per second to roll if rolling trim method is used.
 export TMUX_POWERLINE_SEG_NOW_PLAYING_ROLL_SPEED="2"
 
@@ -107,7 +107,7 @@ export TMUX_POWERLINE_SEG_NOW_PLAYING_LASTFM_UPDATE_PERIOD="30"
 
 # pwd.sh {
 # Maximum length of output.
-export TMUX_POWERLINE_SEG_PWD_MAX_LEN="40"
+export TMUX_POWERLINE_SEG_PWD_MAX_LEN="20"
 # }
 
 # time.sh {

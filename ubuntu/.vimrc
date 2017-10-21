@@ -543,6 +543,10 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.p
 nmap <leader>yg :YcmCompleter GoTo<cr><cr>
 nmap <leader>yf :YcmCompleter FixIt<cr><cr>
 
+" close python mode Regenerate repo cache
+let g:pymode_rope = 0
+let g:pymode_rope_lookup_project = 0
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => powerline  settings                   """"""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

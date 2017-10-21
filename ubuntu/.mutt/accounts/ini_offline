@@ -1,0 +1,26 @@
+# 设置发信地址和用户名
+set from = "minliu@ini.uzh.ch"
+set realname = "Min Liu"
+set use_from = yes
+
+# 设置ini帐户和密码
+set imap_user = "minliu"
+
+# encrypted imap password
+source '~/.decryptPwd.sh|'
+
+# 设置远程服务器文件夹
+# set folder = "imaps://imap.ini.uzh.ch:993"
+# using offlineimap folder, refer to .offlineimaprc.
+set folder = /media/minliu/Work/mail/ini
+set spoolfile = "+INBOX"
+set postponed = "+Drafts"
+set record = "+Sent"
+set trash = "+Trash"
+mailboxes = +INBOX
+mailboxes = +Drafts
+mailboxes = +Sent
+mailboxes = +Trash
+
+# 设置P来自动更新邮件
+macro index P "!echo Checking mails......; offlineimap -o -u quiet \n"
