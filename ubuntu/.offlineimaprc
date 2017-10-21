@@ -1,7 +1,6 @@
 #此general选项指定我有两个账户，账户名称分别为iamdsy1、139，使用时根据自己需要随意修改即可
 [general]
-accounts = ini
-accounts = sina
+accounts = ini, sina
 #多少个账户可以同时同步,和前面的账户数相同即可
 maxsyncaccounts = 2
 # parse the encyrpt password
