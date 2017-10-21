@@ -1,4 +1,4 @@
-source ~/.mutt/accounts/sina_offline
+source ~/.mutt/accounts/ini_offline
 
 # Automatically poll subscribed mailboxes for new mail (new in 1.5.11)
 set imap_check_subscribed
@@ -92,7 +92,7 @@ set edit_headers = no
 set pager_index_lines = 4
 
 # 设置自动解析html文档
-# auto_view text/html
+auto_view text/html
 
 # 告知mutt哪些是邮件列表
 # subscribe ustc_lug@googlegroups.com
@@ -211,6 +211,26 @@ color quoted1       magenta         black
 color quoted2       cyan            black
 color quoted3       yellow          black
 color quoted4       red             black
+
+# set index format
+set index_format= "%4C %Z %{%b %d} %-15.15L (%?l?%4l&%4c?) %s"  # Default format
+set index_format="%4C %?M?+& ?%2M %2e %Z %[%a, %b %d, %Y at %I:%M:%S%p %Z] %-20.20L (%?l?%4l&%4c?) %s" # My format
+
+
+# mutt sup­ports thread­ing (duh!) through
+set sort="threads"
+set strict_threads="yes"
+
+# But you want threads which have new mails ap­pear at the top/bot­tom (whichever way you work):
+set sort_browser="reverse-date"
+set sort_aux="last-date-received"
+
+# Additionally it doesn’t hurt to unset
+unset collapse_unread
+
+# The default-key­bind­ing for threads isn’t the best, so it’s best to re­bind it to something similar to fold in vim:
+bind index za collapse-thread
+bind index zA collapse-all
 
 # 在信件内容窗口(pager)滚动到底部时, 不自动跳到下一封邮件
 set pager_stop
