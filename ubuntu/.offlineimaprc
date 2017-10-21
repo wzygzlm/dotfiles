@@ -88,7 +88,8 @@ nametrans: lambda s: {  'Subscribed' : '订阅邮件',
 					    'Business_Info' : '商讯信息',
                         'Sent' : '已发送'
                       }.get(s,s).decode('utf-8').encode('imap4-utf-7')
-folderfilter = lambda folder: folder in ['INBOX', 'Sent', '草稿夹', '已删除', '商讯信息', '其它邮件', '网站通知'] 
+folderfilter = lambda folder: folder in ['INBOX', 'Sent', 'Drafts', 'Deleted_Messages', 
+                                         'Business_Info', 'Other', 'Web_Notice', 'Trash', 'Starred'] 
 
 #此选项为服务器邮件的设置
 [Repository sina_remote]
