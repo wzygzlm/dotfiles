@@ -122,6 +122,12 @@ set editor = 'vim'
  macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
  macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
 
+# Change different mail account
+ macro index ,inioff '<sync-mailbox><enter-command>source ~/.mutt/accounts/ini_offline<enter><change-folder>!<enter>'
+ macro index ,inion  '<sync-mailbox><enter-command>source ~/.mutt/accounts/ini_imap<enter><change-folder>!<enter>'
+ macro index ,sinaoff '<sync-mailbox><enter-command>source ~/.mutt/accounts/sina_offline<enter><change-folder>!<enter>'
+ macro index ,sinaon '<sync-mailbox><enter-command>source ~/.mutt/accounts/sina_imap<enter><change-folder>!<enter>'
+
 # basic colors -------------------------------------------------------
 color normal        white           black
 color error         red             black
