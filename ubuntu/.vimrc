@@ -504,6 +504,10 @@ nmap <leader>cw :cw 10<cr>
 autocmd FileType c,cpp map <buffer> <leader><space> :w<cr>:make<cr>
 autocmd FileType verilog map <buffer> <leader><space> :w<cr>:make \\| grep -Ei "warning\\|error"<cr>
 
+" Set my own marker to mark some text.
+" TODO: make it as a function with the pattern as the parameter.
+map <leader>lmk :syntax region lmMarker start=/^lm{.*$/ end=/^}lm.*$/<cr>:hi lmMarker ctermfg=30 ctermbg=15<cr>/lm{<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => foldmethod  settings               """""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
