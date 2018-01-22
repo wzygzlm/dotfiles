@@ -23,7 +23,7 @@ quick = 10
 type = Maildir
 #此为根目录，意思是服务器上的inbox会存储到ini目录下，而且在inbox目录下还会存在3个目录，分别是
 #cur new tmp
-localfolders = /media/minliu/Work/mail/ini/
+localfolders = ~/mail/ini/
 folderfilter = lambda folder: folder in ['INBOX', 'Sent', 'Drafts', 'Junk', 'Trash', 'Deleted Messages'] 
 
 #此选项为服务器邮件的设置
@@ -73,7 +73,7 @@ quick = 10
 type = Maildir
 #此为根目录，意思是服务器上的inbox会存储到sina目录下，而且在inbox目录下还会存在3个目录，分别是
 #cur new tmp
-localfolders = /media/minliu/Work/mail/sina/
+localfolders = ~/mail/sina/
 # nametrans = lambda foldername: foldername.decode('utf-8').encode('imap4-utf-7')
 
 nametrans: lambda s: {  'Subscribed' : '订阅邮件',
@@ -88,7 +88,7 @@ nametrans: lambda s: {  'Subscribed' : '订阅邮件',
                         'Sent' : '已发送'
                       }.get(s,s).decode('utf-8').encode('imap4-utf-7')
 folderfilter = lambda folder: folder in ['INBOX', 'Sent', 'Drafts', 'Deleted_Messages', 
-                                         'Business_Info', 'Other', 'Web_Notice', 'Trash', 'Starred'] 
+                                         'Business_Info', 'Web_Notice', 'Trash', 'Starred'] 
 
 #此选项为服务器邮件的设置
 [Repository sina_remote]

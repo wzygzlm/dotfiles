@@ -71,7 +71,7 @@ export TMUX_POWERLINE_SEG_MAILCOUNT_GMAIL_INTERVAL="5"
 
 ## Maildir
 # Path to the maildir to check.
-export TMUX_POWERLINE_SEG_MAILCOUNT_MAILDIR_INBOX="/media/minliu/Work/mail/ini/INBOX/new"
+export TMUX_POWERLINE_SEG_MAILCOUNT_MAILDIR_INBOX="~/mail/ini/INBOX/new"
 
 ## mbox
 # Path to the mbox to check.

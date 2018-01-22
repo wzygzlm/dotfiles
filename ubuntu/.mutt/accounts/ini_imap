@@ -15,6 +15,10 @@ set spoolfile = "+INBOX"
 set postponed = "+Drafts"
 set record = "+Sent"
 set trash = "+Trash"
+mailboxes = +INBOX
+mailboxes = +Drafts
+mailboxes = +Sent
+mailboxes = +Trash
 
 # 设置P来自动更新邮件
 bind index P imap-fetch-mail
