@@ -1,3 +1,7 @@
+Generate gpg public key:
+gpg2 --full-gen-key
+notice: real name and email should be: "minliu" and "wzygzlm@gmail.com"
+
 How to generate the password gpg file:
 echo "YourPassword" | gpg2 --encrypt --recipient "Your Name" -o ~/.mail-ini-passwd.gpg
 
