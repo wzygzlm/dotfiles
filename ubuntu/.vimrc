@@ -573,6 +573,13 @@ Plugin 'xuhdev/vim-latex-live-preview'
 " let g:livepreview_previewer = 'apvlv'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-fugitive  settings               """""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim wrapper for git """""""""""""""""""""""""""""""""""""""""""""""""
+Plugin 'tpope/vim-fugitive'
+autocmd QuickFixCmdPost *grep* cwindow
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-tex-fold  settings                         """""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " A light-weight alternative to vim-latexsuite's folding.

@@ -116,7 +116,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# For vim using ctrl-s mapping to save files
+# For bazzrar configuration
+export DEBFULLNAME="Min Liu"
+export DEBEMAIL="wzygzlm@gmail.com"
+
+# Make ctrl-s available in the terminal
 stty -ixon
 source /opt/ros/kinetic/setup.bash
 source ~/dvsws/devel/setup.bash
@@ -136,3 +140,12 @@ function _update_ps1() {
 if [ "$TERM" != "linux" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
+
+# Add library path: /usr/local/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"/usr/local/lib"
+
+# Brew configuration
+test -d ~/.linuxbrew && PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
+test -d /home/linuxbrew/.linuxbrew && PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
+test -r ~/.bash_profile && echo "export PATH='$(brew --prefix)/bin:$(brew --prefix)/sbin'":'"$PATH"' >>~/.bash_profile
+echo "export PATH='$(brew --prefix)/bin:$(brew --prefix)/sbin'":'"$PATH"' >>~/.profile
