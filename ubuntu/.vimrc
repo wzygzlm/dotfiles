@@ -573,9 +573,9 @@ Plugin 'xuhdev/vim-latex-live-preview'
 " let g:livepreview_previewer = 'apvlv'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vim-fugitive  settings               """""""""""""""""""
+" => vim-fugitive  settings                         """""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim wrapper for git """""""""""""""""""""""""""""""""""""""""""""""""
+" vim wrapper for git, the wiki is very useful for understanding git ""
 Plugin 'tpope/vim-fugitive'
 autocmd QuickFixCmdPost *grep* cwindow
 
