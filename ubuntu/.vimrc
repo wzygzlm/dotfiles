@@ -474,7 +474,7 @@ nmap <silent> <leader>fe :Sexplore!<cr>
 " => cscope settings               """"""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("cscope")
-    set csprg=/usr/local/bin/cscope
+    set csprg=/usr/bin/cscope
     set csto=1
     set cst 
 	set cscopequickfix=s-,c-,d-,i-,t-,e-
@@ -536,7 +536,7 @@ Plugin 'Scrooloose/nerdtree'
 Plugin 'clones/vim-genutils'
 Plugin 'tmhedberg/matchit'
 Plugin 'ctrlpvim/ctrlp.vim'
-
+Plugin 'tpope/vim-surround'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => YouCompleteMe  settings                   """"""""""""""""""""""""
