@@ -121,26 +121,26 @@
 
 	# Use colors in Git commands that are capable of colored output when
 	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
-	ui = auto
+    # ui = auto
 
 [color "branch"]
 
-	current = yellow reverse
-	local = yellow
-	remote = green
+    # current = yellow reverse
+    # local = yellow
+    # remote = green
 
 [color "diff"]
 
-	meta = yellow bold
-	frag = magenta bold # line info
-	old = red # deletions
-	new = green # additions
+    # meta = yellow bold
+    # frag = magenta bold # line info
+    # old = red # deletions
+    # new = green # additions
 
 [color "status"]
 
-	added = yellow
-	changed = green
-	untracked = cyan
+    # added = yellow
+    # changed = green
+    # untracked = cyan
 
 [commit]
 
