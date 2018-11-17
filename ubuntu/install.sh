@@ -6,8 +6,8 @@ git clone https://github.com/wzygzlm/dotfiles.git
 # 2. Install required package:
 sudo apt-get install tmux mutt offlineimap ncdu ranger cmus vim python-pip xclip fonts-powerline msmtp cscope exuberant-ctags
 
-# 3. Clone powerline-shell: 
-cd && git clone https://github.com/b-ryan/powerline-shell.git
+# 4. Clone powerline-shell and tmux-powerline: 
+cd && git clone https://github.com/b-ryan/powerline-shell.git && git clone https://github.com/erikw/tmux-powerline.git
 
 # 4. Install the powerline-shell: 
 cd powerline-shell && sudo python setup.py install
