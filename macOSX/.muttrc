@@ -1,0 +1,247 @@
+source ~/.mutt/accounts/ini_offline
+
+# Automatically poll subscribed mailboxes for new mail (new in 1.5.11)
+set imap_check_subscribed
+# And poll the current mailbox more often (not needed with IDLE in post 1.5.11)
+set timeout=10
+# Display download progress every 5K
+set net_inc=5
+
+# 允许mutt自动创建一个新的imap连接
+unset imap_passive
+
+# imap连接保持时间
+set imap_keepalive = 300
+
+# 检查新邮件间隔时间
+set mail_check = 60
+
+# 本地缓存目录
+set header_cache = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+
+# 设置TLS验证
+set certificate_file = /etc/ssl/certs/ca-certificates.crt
+
+# activate TLS if available on the server
+set ssl_starttls=yes
+# always use SSL when connecting to a server
+set ssl_force_tls=yes
+
+# 设置内建smtp,这里我们不使用
+#set smtp_url = "smtps://username@gmail.com@smtp.gmail.com:465/"
+#set smtp_pass = "your password"
+#set ssl_starttls = yes
+
+# 使用msmtp
+set sendmail = "/usr/bin/msmtp"
+
+# 保存发送的邮件
+set record
+
+# 回信不包含邮件头
+set header = no
+
+# 退出提醒
+set quit = ask-yes
+
+# 回信包含原文
+set include
+
+# 设置回信引文之前的插入符号
+set indent_str = "> "
+
+# 设置邮件头
+my_hdr From: minliu@ini.uzh.ch
+
+# 邮件打分
+score "~N" +4
+score "~s 通知" +2
+score "~D" -5
+score "~O" +1
+score "~s believe" -10
+
+# 排序方式
+set sort = date
+
+# 二级排序
+set sort_aux = score
+
+# 翻到最后一页不回到第一页
+set pager_stop
+
+# 快速回信
+set fast_reply
+
+# 删除邮件自动移动光标
+set resolve = yes
+
+# 设置编码，保持和终端一致
+set charset = "utf-8"
+
+# 发信使用的字符集
+set send_charset = "us-ascii:iso-8859-1:gb18030:utf-8"
+
+# 是否用按键确认外部程序返回
+set wait_key = yes
+
+# 是否编辑邮件头
+set edit_headers = no
+
+# pager显示行数
+set pager_index_lines = 4
+
+# 设置自动解析html文档
+auto_view text/html
+
+# 告知mutt哪些是邮件列表
+# subscribe ustc_lug@googlegroups.com
+# subscribe shlug@googlegroups.com
+# subscribe gentoo-user@lists.gentoo.org
+
+# 设置打开的编辑器
+set editor = 'vim'
+
+# Vim式键位映射, \c表示ctrl键
+ bind pager G bottom
+ bind pager j next-line
+ bind pager k previous-line
+ bind pager \cd next-page
+ bind pager \cu previous-page
+ bind pager J next-entry
+ bind pager K previous-entry
+ bind pager gg top
+ bind index gg first-entry
+ bind index G last-entry
+ bind index R group-reply
+ bind index \cf next-page
+ bind index \cb previous-page
+ bind index } bottom-page
+ bind index f change-folder
+
+ macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+ macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+
+# Change different mail account
+ macro index ,inioff '<sync-mailbox><enter-command>source ~/.mutt/accounts/ini_offline<enter><change-folder>!<enter>'
+ macro index ,inion  '<sync-mailbox><enter-command>source ~/.mutt/accounts/ini_imap<enter><change-folder>!<enter>'
+ macro index ,sinaoff '<sync-mailbox><enter-command>source ~/.mutt/accounts/sina_offline<enter><change-folder>!<enter>'
+ macro index ,sinaon '<sync-mailbox><enter-command>source ~/.mutt/accounts/sina_imap<enter><change-folder>!<enter>'
+
+# basic colors -------------------------------------------------------
+color normal        white           black
+color error         red             black
+color tilde         white           black
+color message       cyan            black
+color markers       red             black
+color attachment    brightred       black
+color search        brightmagenta   black
+color status        brightwhite     black
+color indicator     white           blue
+color tree          magenta         black   # arrows in threads
+
+# 列表部分 -------------------------------------------------------
+# 高亮不同状态的邮件, 具体的pattern(例如~N)参见mutt manual的4.2节
+
+color index         red             black         "~A"                        # all messages
+color index         brightred       black         "~E"                        # expired messages
+color index         brightcyan      black         "~N"                        # new messages
+color index         brightcyan      black         "~O"                        # old messages
+color index         brightmagenta   black         "~Q"                        # messages that have been replied to
+color index         white           black         "~R"                        # read messages
+color index         brightblue      black         "~U"                        # unread messages
+color index         brightblue      black         "~U~$"                      # unread, unreferenced messages
+color index         brightblue      black         "~v"                        # messages part of a collapsed thread
+color index         brightblue      black         "~P"                        # messages from me
+color index         cyan            black         "~p!~F"                     # messages to me
+color index         brightgreen     black         "~N~p!~F"                   # new messages to me
+color index         brightgreen     black         "~U~p!~F"                   # unread messages to me
+color index         green           black         "~R~p!~F"                   # messages to me
+color index         red             black         "~F"                        # flagged messages
+color index         red             black         "~F~p"                      # flagged messages to me
+color index         red             black         "~N~F"                      # new flagged messages
+color index         red             black         "~N~F~p"                    # new flagged messages to me
+color index         red             black         "~U~F~p"                    # new flagged messages to me
+color index         white           brightmagenta "~D"                        # deleted messages
+color index         white           black         "~v~(!~N!~O)"               # collapsed thread with no unread
+color index         magenta          black         "~v~(~N|~O)"               # collapsed thread with some unread
+color index         magenta           black         "~N~v~(~N)"               # collapsed thread with unread parent
+color index         red             white           "~v~(~F)!~N"              # collapsed thread with flagged, no unread
+color index         yellow          white           "~v~(~F~N)"               # collapsed thread with some unread & flagged
+color index         green           white           "~N~v~(~F~N)"             # collapsed thread with unread parent & flagged
+color index         green           white           "~N~v~(~F)"               # collapsed thread with unread parent, no unread inside, but some flagged
+color index         yellow          red             "~v~(~D)"                 # thread with deleted (doesn't differentiate between all or partial)
+
+# 邮件内容页面邮件头部分高亮 ------------------------------------------
+
+# color header        brightcyan      default         "^"
+color hdrdefault    brightblue      black
+color header        brightgreen     black         "^(From)"
+color header        brightyellow    black         "^(Subject)"
+
+# 自定义的patch补丁高亮, 方便查看patch
+color   body     red            black    "^-.*"
+color   body     green          black    "^[+].*"
+color   body     brightwhite    black    "^diff --git.*"
+color   body     brightwhite    black    "^index [a-f0-9].*"
+color   body     brightwhite    black    "^\-\-\- a.*"
+color   body     brightwhite    black    "^[\+]{3} b.*"
+color   body     brightyellow   black    "^@@.*"
+color   body     brightmagenta  black    "^(Signed-off-by).*"
+color   body     brightmagenta  black    "^(Reported-by).*"
+color   body     brightmagenta  black    "^(Suggested-by).*"
+color   body     brightmagenta  black    "^(Acked-by).*"
+color   body     brightmagenta  black    "^(Reviewed-by).*"
+color   body     brightmagenta  black    "^\-\-\-$"
+# color   body     brightmagenta  black    "^(Cc).*"
+# color   body     brightmagenta  black    "^(CC).*"
+color   body     white          black    "^( \#define).*"
+color   body     white          black    "^( \#include).*"
+color   body     white          black    "^( \#if).*"
+color   body     white          black    "^( \#el).*"
+color   body     white          black    "^( \#endif).*"
+
+# optional highlightling
+color   body    green           black    "LGTM"
+color   body    brightmagenta   black    "-- Commit Summary --"
+color   body    brightmagenta   black    "-- File Changes --"
+color   body    brightmagenta   black    "-- Patch Links --"
+color   body    green           black    "^Merged #.*"
+color   body    red             black    "^Closed #.*"
+color   body    brightblue      black    "^Reply to this email.*"
+
+# 引文起始符号设置
+# set quote_regexp = "^([ ]t]*[|>:}#])+"
+set quote_regexp = "^([ \t]*[>])+"
+
+# 嵌套引文不同层的颜色
+color quoted        blue            black
+color quoted1       magenta         black
+color quoted2       cyan            black
+color quoted3       yellow          black
+color quoted4       red             black
+
+# set index format
+set index_format= "%4C %Z %{%b %d} %-15.15L (%?l?%4l&%4c?) %s"  # Default format
+set index_format="%4C %?M?+& ?%2M %2e %Z %[%a, %b %d, %Y at %I:%M:%S%p %Z] %-20.20L (%?l?%4l&%4c?) %s" # My format
+
+# mutt sup­ports thread­ing (duh!) through
+set sort="threads"
+set strict_threads="yes"
+
+# But you want threads which have new mails ap­pear at the top/bot­tom (whichever way you work):
+set sort_browser="reverse-date"
+set sort_aux="last-date-received"
+
+# Additionally it doesn’t hurt to unset
+unset collapse_unread
+
+# The default-key­bind­ing for threads isn’t the best, so it’s best to re­bind it to something similar to fold in vim:
+bind index za collapse-thread
+bind index zA collapse-all
+
+# 在信件内容窗口(pager)滚动到底部时, 不自动跳到下一封邮件
+set pager_stop
+
+# 使用solarized配色方案
+# source ~/.mutt/mutt-colors-solarized/mutt-colors-solarized-dark-256.muttrc

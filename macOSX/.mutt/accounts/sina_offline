@@ -1,0 +1,14 @@
+# using offlineimap folder, refer to .offlineimaprc.
+set folder = ~/mail/sina
+set spoolfile = "+INBOX"
+set postponed = "+Drafts"
+set record = "+Sent"
+set trash = "+Trash"
+mailboxes = +INBOX
+mailboxes = +Drafts
+mailboxes = +Sent
+mailboxes = +Trash
+mailboxes = +Web Notice
+
+# 设置P来自动更新邮件
+macro index P "!echo Checking mails......; offlineimap -o -u quiet \n"

@@ -1,0 +1,21 @@
+1. Clone dotfiles: 
+git clone https://github.com/wzygzlm/dotfiles.git
+
+2. Install HomeBrew and required package:
+brew install tmux mutt offlineimap ncdu ranger cmus vim fonts-powerline msmtp cscope exuberant-ctags
+
+3. Clone powerline-shell: 
+cd && git clone https://github.com/b-ryan/powerline-shell.git && git clone https://github.com/erikw/tmux-powerline.git
+
+4. Install the powerline-shell: 
+cd powerline-shell && sudo python setup.py install
+
+5. Clone tmux-powerline
+
+6. Install oh-my-zsh
+
+7. Copy all the files from dotfiles/ubuntu to ~/.:
+cd && cp -rf dotfiles/ubuntu/.[^.]* ~/ && cp -rf dotfiles/ubuntu/* ~/
+
+8. Clone vim vundle:
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
