@@ -245,3 +245,6 @@ set pager_stop
 
 # 使用solarized配色方案
 # source ~/.mutt/mutt-colors-solarized/mutt-colors-solarized-dark-256.muttrc
+
+# source contact file
+source ~/.muttContact
