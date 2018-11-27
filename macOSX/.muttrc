@@ -21,7 +21,7 @@ set header_cache = ~/.mutt/cache/headers
 set message_cachedir = ~/.mutt/cache/bodies
 
 # 设置TLS验证
-set certificate_file = /etc/ssl/certs/ca-certificates.crt
+set certificate_file = /usr/local/etc/openssl/cert.pem
 
 # activate TLS if available on the server
 set ssl_starttls=yes
@@ -34,7 +34,7 @@ set ssl_force_tls=yes
 #set ssl_starttls = yes
 
 # 使用msmtp
-set sendmail = "/usr/bin/msmtp"
+set sendmail = "/usr/local/bin/msmtp"
 
 # 保存发送的邮件
 set record
