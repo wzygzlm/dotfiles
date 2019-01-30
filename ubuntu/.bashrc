@@ -141,6 +141,9 @@ if [ "$TERM" != "linux" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
+# Added a comman to lock screen 
+alias lock='gnome-screensaver-command -l'
+
 # Add library path: /usr/local/lib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"/usr/local/lib"
 
