@@ -571,6 +571,7 @@ let g:tmux_navigator_disable_when_zoomed = 1
 " Used to preview the pdf in real-time while editing the tex files.
 Plugin 'xuhdev/vim-latex-live-preview'
 " let g:livepreview_previewer = 'apvlv'
+let g:livepreview_previewer = 'zathura'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-fugitive  settings                         """""""""""""""""""
