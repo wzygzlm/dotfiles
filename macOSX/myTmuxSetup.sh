@@ -8,7 +8,7 @@ tmux_init()
     tmux new-window -n "editor"          # create a new window
     tmux new-window -n "server" "top"          # create a new window
     tmux new-window -n "files" "ranger"          # create a file manager window
-    tmux new-window -n "ncdu" "ncdu"          # create a ncdu window
+    tmux new-window -n "ncdu" "ncdu /"          # create a ncdu window
     tmux new-window -n "email" "mutt"           # create an email window with two panels: mutt and sup
     tmux split-window -h "sup-mail" 
     tmux select-pane -t 0
