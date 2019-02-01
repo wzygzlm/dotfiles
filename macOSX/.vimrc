@@ -447,8 +447,14 @@ endfunction
 "      echo system('echo '.shellescape(join(hits, "\r")).'| xclip -i -sel clip') 
 " endfunction
 
+" This setting is only for macosx because "*" register is correspoinding to the system clipborad
+" instead of mouse selection on Linux.
+set clipboard=unnamedplus
+
+" Here is also a little different from Linux, too.
+" Macosx use pbcopy and pbpaster, however, the equivalent stuff in Linux is xclip
 function! CopyVimSelToClip() range
-     echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), "\r")).'| xclip -i -sel clip') 
+     echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), "\r")).'| pbcopy') 
 endfunction
 
 " Pack it as a command and map C-c for copying.
@@ -461,7 +467,7 @@ vnoremap <C-c> :call CopyVimSelToClip()<cr>
 " From vim help text, we know that vim already consider the problem
 " that Ctrl-v is often used to by user to map it as the paste action,
 " so they use Ctrl-q to replace Ctrl-v.
-com! -nargs=0 CopyClipToVimSel :read !xclip -o -sel clip<cr>
+com! -nargs=0 CopyClipToVimSel :read !pbpaste -o<cr>
 noremap <C-v> :CopyClipToVimSel<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
