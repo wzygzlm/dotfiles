@@ -1,0 +1,23 @@
+# HTML
+text/html; $HOME/.mutt/view_attachment.sh %s "-" 
+# text/html; $HOME/.mutt/view_attachment.sh %s "-" 'Google\ Chrome'
+# text/html; w3m -I %{charset} -T text/html -dump %s; copiousoutpu
+
+#MS office documents
+application/excel; $HOME/.mutt/view_attachment.sh %s "-" '/Applications/Microsoft Excel.app'
+application/ms-exc; $HOME/.mutt/view_attachment.sh %s "-" '/Applications/Microsoft Excel.app'
+application/msword; $HOME/.mutt/view_attachment.sh %s "-" '/Applications/Microsoft Word.app'
+application/vnd.ms-exc; $HOME/.mutt/view_attachment.sh %s "-" '/Applications/Microsoft Excel.app'
+application/vnd.ms-excel; $HOME/.mutt/view_attachment.sh %s "-" '/Applications/Microsoft Excel.app'
+application/x-msexcel; $HOME/.mutt/view_attachment.sh %s "-" '/Applications/Microsoft Excel.app'
+
+# Images
+image/*; $HOME/.mutt/view_attachment.sh %s "-" 
+
+# PDFs
+# application/pdf; $HOME/.mutt/view_attachment.sh %s "-" 'Skim'
+application/pdf; /usr/local/bin/zathura %s 
+
+
+# Unidentified.
+application/octet-stream; $HOME/.mutt/view_attachment.sh %s "-" 

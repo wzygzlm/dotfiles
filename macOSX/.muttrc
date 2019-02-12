@@ -92,7 +92,7 @@ set edit_headers = no
 set pager_index_lines = 4
 
 # 设置自动解析html文档
-auto_view text/html
+# auto_view text/html
 
 # 告知mutt哪些是邮件列表
 # subscribe ustc_lug@googlegroups.com
@@ -246,5 +246,8 @@ set pager_stop
 # 使用solarized配色方案
 # source ~/.mutt/mutt-colors-solarized/mutt-colors-solarized-dark-256.muttrc
 
+# set mailcap
+set mailcap_path=~/.mutt/mailcap
+
 # source contact file
-source ~/.muttContact
+source ~/.mutt/muttContact
