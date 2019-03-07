@@ -805,6 +805,14 @@ vmap <c-w> <esc>
 """ map <c-a> <esc>ggVG
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" iVim fixes, only for ios
+let $PATH .= ':'.$HOME.'/../Library/bin:'.$HOME.'/bin'
+let $PYTHONHOME = $HOME.'/../Library/'
+let $SSH_HOME = $HOME
+let $CURL_HOME = $HOME
+let $SSL_CERT_FILE = $HOME.'/cacert.pem'
+let $HGRCPATH = $HOME.'/.hgrc'
+
 " Fast reloading of the .vimrc
 map <silent> <leader>s :source ~/.vimrc<cr>
 " Fast editing of .vimrc
