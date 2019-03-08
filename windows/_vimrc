@@ -751,10 +751,10 @@ language messages zh_CN.utf-8
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " set shell to use powershell on windows
-if has('win32')|| has('win32unix')|| has('win64')
-    set shell=powershell
-    set shellcmdflag=-command
-endif
+"if has('win32')|| has('win32unix')|| has('win64')
+"    set shell=powershell
+"    set shellcmdflag=-command
+"endif
 
 " set line number
 set number
