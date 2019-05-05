@@ -1,6 +1,7 @@
+export TERM="xterm-256color"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/liumin/.oh-my-zsh"
 
@@ -8,16 +9,16 @@ export ZSH="/Users/liumin/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="random"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
 # If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+ZSH_THEME_RANDOM_CANDIDATES=( "agnoster" "powerlevel9k/powerlevel9k")
 
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -36,7 +37,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -62,10 +63,10 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  zsh-autosuggestions
-)
+
+# plugins=(git zsh-autosuggestions)
+
+plugins=(git sudo colored-man-pages last-working-dir command-not-found zsh-syntax-highlighting zsh-autosuggestions autojump command-time alias-tips you-should-use debian dirhistory)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,17 +109,24 @@ set -o vi
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-# Set vim as the default editor in bash
+# Set vim as the default editor in zsh
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-# Set powerline for bash
-function _update_ps1() {
-    PS1="$(powerline-shell $?)"
+# Set powerline for zsh
+function powerline_precmd() {
+    PS1="$(powerline-shell --shell zsh $?)"
 }
-
+function install_powerline_precmd() {
+    for s in "${precmd_functions[@]}"; do
+        if [ "$s" = "powerline_precmd" ]; then
+            return
+        fi
+    done
+    precmd_functions+=(powerline_precmd)
+}
 if [ "$TERM" != "linux" ]; then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+    install_powerline_precmd
 fi
 
 # Add library path: /usr/local/lib
