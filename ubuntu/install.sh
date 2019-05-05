@@ -4,7 +4,7 @@
 git clone https://github.com/wzygzlm/dotfiles.git
 
 # 2. Install required package:
-sudo apt-get install tmux mutt offlineimap ncdu ranger cmus vim python-pip xclip fonts-powerline msmtp cscope exuberant-ctags zathura
+sudo apt-get install tmux mutt offlineimap ncdu ranger cmus vim python-pip xclip fonts-powerline msmtp cscope exuberant-ctags zathura zsh
 
 # 4. Clone powerline-shell and tmux-powerline: 
 cd && git clone https://github.com/b-ryan/powerline-shell.git && git clone https://github.com/erikw/tmux-powerline.git
@@ -17,3 +17,6 @@ cd & cp -rf dotfiles/ubuntu/.[^.]* ~/ & cp -rf dotfiles/ubuntu/* ~/
 
 # 6. Clone vim vundle:
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+# 7. Change shell from bash to zsh
+chsh -s zsh

@@ -8,13 +8,13 @@
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="random"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
 # If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+ZSH_THEME_RANDOM_CANDIDATES=( "agnoster" "powerlevel9k/powerlevel9k")
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -108,17 +108,25 @@ set -o vi
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-# Set vim as the default editor in bash
+# Set vim as the default editor in zsh
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-# Set powerline for bash
-function _update_ps1() {
-    PS1="$(powerline-shell $?)"
+# Set powerline for zsh, if it is very slow on embedded system such as pi
+# then comment this part
+function powerline_precmd() {
+    PS1="$(powerline-shell --shell zsh $?)"
 }
-
+function install_powerline_precmd() {
+    for s in "${precmd_functions[@]}"; do
+        if [ "$s" = "powerline_precmd" ]; then
+            return
+        fi
+    done
+    precmd_functions+=(powerline_precmd)
+}
 if [ "$TERM" != "linux" ]; then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+    install_powerline_precmd
 fi
 
 # Add library path: /usr/local/lib
