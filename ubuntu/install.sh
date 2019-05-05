@@ -19,6 +19,7 @@ cd && cp -rf dotfiles/ubuntu/.[^.]* ~/ && cp -rf dotfiles/ubuntu/* ~/
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # 7. Clone zsh plugins
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 git clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/popstas/zsh-command-time.git ~/.oh-my-zsh/custom/plugins/command-time
@@ -27,4 +28,4 @@ git clone https://github.com/djui/alias-tips.git ~/.oh-my-zsh/custom/plugins/ali
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # 8. Change shell from bash to zsh
-chsh -s zsh
+chsh -s /usr/bin/zsh
