@@ -543,7 +543,7 @@ call vundle#begin()
 " call vundle#begin()
 
 " let Vundle manage Vundle
-Plugin 'VundleVim/Vundle.Vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " original repos on github
 Plugin 'scrooloose/syntastic'
@@ -706,11 +706,11 @@ nmap <silent><leader>mk :MarksBrowser<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Python settings                     """"""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'python-mode/python-mode'
+" Plugin 'python-mode/python-mode'
 
 " close python mode Regenerate repo cache
-let g:pymode_rope = 0
-let g:pymode_rope_lookup_project = 0
+" let g:pymode_rope = 0
+" let g:pymode_rope_lookup_project = 0
 
 " other repos
 " Plugin 'https://bitbucket.org/Haroogan/vim-youcompleteme-for-windows.git'
