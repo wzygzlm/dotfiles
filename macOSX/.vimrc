@@ -122,10 +122,19 @@ set background=dark
 
 " Set extra options when running in GUI mode
 if has("gui_running")
-    set guioptions-=T
+    set guioptions+=T
     set guioptions+=e
     set t_Co=256
     set guitablabel=%M\ %t
+
+    if has('win32')
+        set guifont=Consolas:h12   " Win32.
+    elseif has('gui_macvim')
+        set guifont=Monaco:h15     " OSX.
+    else
+        set guifont=Monospace\ 12  " Linux.
+    endif    
+
 endif
 
 
