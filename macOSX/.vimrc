@@ -541,6 +541,7 @@ autocmd Filetype c,cpp setl fdm=syntax | setl nofen
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " call vundle#begin()
+" TODO: use gtags to replace ctags. Try plugins Plug, gutentags, airline, vim-preview, etc. 
 
 " let Vundle manage Vundle
 Plugin 'VundleVim/Vundle.vim'
