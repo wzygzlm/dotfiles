@@ -63,9 +63,9 @@ ENABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git zsh-autosuggestions)
+# plugins=(git zsh-autosuggestions)
 
-# plugins=(git sudo colored-man-pages last-working-dir command-not-found zsh-syntax-highlighting zsh-autosuggestions autojump command-time alias-tips you-should-use debian dirhistory)
+plugins=(git sudo colored-man-pages last-working-dir command-not-found zsh-syntax-highlighting zsh-autosuggestions autojump command-time alias-tips you-should-use debian dirhistory)
 
 source $ZSH/oh-my-zsh.sh
 
