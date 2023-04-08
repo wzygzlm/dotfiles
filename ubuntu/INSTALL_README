@@ -8,7 +8,7 @@ sudo apt-get install tmux mutt offlineimap ncdu ranger cmus vim python-pip xclip
 cd && git clone https://github.com/b-ryan/powerline-shell.git && git clone https://github.com/erikw/tmux-powerline.git
 
 4. Install the powerline-shell: 
-cd powerline-shell && sudo python setup.py install
+cd powerline-shell && sudo apt install python3-pip && sudo python3 setup.py install
 
 5. Copy all the files from dotfiles/ubuntu to ~/.:
 cd && cp -rf dotfiles/ubuntu/.[^.]* ~/ && cp -rf dotfiles/ubuntu/* ~/
@@ -19,8 +19,10 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 7. Clone tmux plugins maanger TPM:
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-8. Clone oh-my-zsh and zsh plugins
+8. Clone oh-my-zsh 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+9. Clone zsh plugins
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/popstas/zsh-command-time.git ~/.oh-my-zsh/custom/plugins/command-time
@@ -30,5 +32,5 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf & ./.fzf/install
 
-9. Change shell from bash to zsh
+10. Change shell from bash to zsh
 chsh -s /usr/bin/zsh
