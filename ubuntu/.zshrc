@@ -112,6 +112,10 @@ export LC_ALL=en_US.UTF-8
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+# Added a comman to lock and unlock screen 
+alias lock='gnome-screensaver-command -l'
+alias unlock='gnome-screensaver-command -d'
+
 # Set powerline for zsh, if it is very slow on embedded system such as pi
 # then comment this part
 function powerline_precmd() {
