@@ -37,3 +37,6 @@ sudo apt install jq
 
 11. Change shell from bash to zsh
 chsh -s /usr/bin/zsh
+
+12. install this font to solve some powerline font problems (optional)
+sudo apt install fonts-noto
